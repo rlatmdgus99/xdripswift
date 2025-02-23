@@ -232,8 +232,7 @@ jobs:
         run: sudo sntp -sS time.windows.com
       
       # Build signed Xdrip4iOS IPA file
-      - name: Update entitlement background sound
-  run: sed -i -e 's/<string>bluetooth-central<\/string>/<string>bluetooth-central<\/string><string>audio<\/string>/g' Trio/Trio/Info.plist
+      
       - name: Fastlane Build & Archive
         run: bundle exec fastlane build_xdrip4ios
         env:
